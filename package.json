@@ -1,19 +1,14 @@
 {
   "name": "moment-1",
   "version": "1.0.0",
-  "description": "Automatisering & publicering",
+  "description": "Automatisering &amp; publicering",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Frontend-baserad-webbutveckling/moment-1.git"
-  },
-  "author": "Babak J.",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Frontend-baserad-webbutveckling/moment-1/issues"
-  },
-  "homepage": "https://github.com/Frontend-baserad-webbutveckling/moment-1#readme"
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
 }
