@@ -2,7 +2,6 @@
   "name": "moment-1",
   "version": "1.0.0",
   "description": "Automatisering &amp; publicering",
-  "main": "index.js",
   "scripts": {
     "start": "parcel",
     "build": "parcel build"

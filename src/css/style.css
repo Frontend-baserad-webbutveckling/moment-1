@@ -3,12 +3,12 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #f7f7f7;
+    background-color: #50abe7;
 }
 
 /* Huvudmeny */
 header {
-    background-color: #333;
+    background-color: #e15808;
     height: 60px;
     display: flex;
     align-items: center;
