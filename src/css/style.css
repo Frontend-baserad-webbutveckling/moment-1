@@ -1,0 +1,136 @@
+/* Grundläggande */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f7f7f7;
+}
+
+/* Huvudmeny */
+header {
+    background-color: #333;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Hamburgermeny */
+.hamburger-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-right: 20px;
+}
+
+.hamburger-btn span {
+    background-color: #fff;
+    width: 24px;
+    height: 2px;
+    border-radius: 2px;
+    transition: 0.2s ease-in-out;
+}
+
+.hamburger-btn.open span:nth-of-type(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-btn.open span:nth-of-type(2) {
+    opacity: 0;
+}
+
+.hamburger-btn.open span:nth-of-type(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Huvudnavigering */
+.main-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    transform: translateX(-100%);
+    transition: 0.3s ease-in-out;
+    z-index: 10;
+}
+
+.main-nav.open {
+    transform: translateX(0);
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-nav li {
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    transition: 0.2s ease-in-out;
+}
+
+.main-nav a:hover {
+    color: #000;
+}
+
+/* Sektioner */
+section {
+    padding: 40px 20px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+img {
+    max-width: 300px;
+    margin: 20px auto;
+}
+
+/* Media Queries */
+@media screen and (min-width: 768px) {
+    .hamburger-btn {
+        display: none;
+    }
+
+    .main-nav {
+        position: static;
+        transform: translateX(0);
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        z-index: 1;
+    }
+
+    .main-nav ul {
+        display: flex;
+    }
+
+    .main-nav li {
+        border-bottom: none;
+    }
+}
