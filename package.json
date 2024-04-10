@@ -10,6 +10,7 @@
   "author": "Babak Jameei",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "^2.12.0"
+    "parcel": "^2.12.0",
+    "sharp": "^0.31.3"
   }
 }
