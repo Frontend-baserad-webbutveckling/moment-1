@@ -16,78 +16,63 @@ header {
 }
 
 /* Hamburgermeny */
-.hamburger-btn {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    width: 30px;
-    height: 30px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin-right: 20px;
-}
-
-.hamburger-btn span {
-    background-color: #fff;
-    width: 24px;
-    height: 2px;
-    border-radius: 2px;
-    transition: 0.2s ease-in-out;
-}
-
-.hamburger-btn.open span:nth-of-type(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.hamburger-btn.open span:nth-of-type(2) {
-    opacity: 0;
-}
-
-.hamburger-btn.open span:nth-of-type(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* Huvudnavigering */
-.main-nav {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: #fff;
-    transform: translateX(-100%);
-    transition: 0.3s ease-in-out;
-    z-index: 10;
-}
-
-.main-nav.open {
-    transform: translateX(0);
-}
-
-.main-nav ul {
+li {
     list-style: none;
-    padding: 0;
-    margin: 0;
 }
 
-.main-nav li {
-    padding: 10px 20px;
-    border-bottom: 1px solid #ddd;
-}
-
-.main-nav a {
+/* Länk namnen */
+a {
+    color: white;
     text-decoration: none;
-    color: #333;
-    font-size: 18px;
-    transition: 0.2s ease-in-out;
 }
 
-.main-nav a:hover {
-    color: #000;
+.navbar {
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
 }
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 60px;
+}
+
+.site_name {
+    font-size: 2em;
+}
+
+.nav-link {
+    transition: 0.7s ease;
+
+}
+
+.nav-link:hover {
+    color: dodgerblue;
+}
+
+/* HAMBURGERMENU START */
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: rgb(255, 255, 255);
+    z-index: -1;
+}
+
 
 /* Sektioner */
 section {
@@ -113,25 +98,47 @@ img {
 }
 
 /* Media Queries */
-@media screen and (min-width: 768px) {
-    .hamburger-btn {
-        display: none;
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        position: relative;
+        left: 400px;
     }
 
-    .main-nav {
-        position: static;
-        transform: translateX(0);
-        width: auto;
-        height: auto;
-        background-color: transparent;
-        z-index: 1;
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
     }
 
-    .main-nav ul {
-        display: flex;
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
     }
 
-    .main-nav li {
-        border-bottom: none;
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Ändring av width för hur menyn ska synas */
+    .nav-menu {
+        position: absolute;
+        left: -110%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: #e15808;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+
+    }
+
+    /* Avståndet mellan länkarna top and bottom */
+    .nav-item {
+        margin: 16px 0;
+    }
+
+    /* active görs i JavaScript, denna rad tar tillbaka länkarna från att att ha varit -100%
+    alternativt display: none (reverse?) */
+    .nav-menu.active {
+        left: 0;
     }
 }
