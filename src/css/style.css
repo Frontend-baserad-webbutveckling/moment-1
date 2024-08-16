@@ -55,7 +55,7 @@ a {
     color: dodgerblue;
 }
 
-/* HAMBURGERMENU START */
+/* HAMBURGERMENU */
 
 .hamburger {
     display: none;
@@ -101,8 +101,8 @@ img {
 @media (max-width: 768px) {
     .hamburger {
         display: block;
-        position: relative;
-        left: 400px;
+        position: absolute;
+        left: 85%;
     }
 
     .hamburger.active .bar:nth-child(2) {
@@ -136,8 +136,7 @@ img {
         margin: 16px 0;
     }
 
-    /* active görs i JavaScript, denna rad tar tillbaka länkarna från att att ha varit -100%
-    alternativt display: none (reverse?) */
+    /* active görs i JavaScript, denna rad tar tillbaka länkarna från att att ha varit -100% */
     .nav-menu.active {
         left: 0;
     }
